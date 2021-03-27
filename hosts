@@ -1,0 +1,2 @@
+# example hosts file for wireshark host name resolution
+127.0.0.1 localhost
