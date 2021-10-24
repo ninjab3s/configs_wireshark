@@ -1,4 +1,4 @@
-# Configuration file for Wireshark 3.4.3.
+# Configuration file for Wireshark 3.4.2.
 #
 # This file is regenerated each time preferences are saved within
 # Wireshark. Making manual changes should be safe, however.
@@ -216,7 +216,7 @@ gui.color_filter_bg.deprecated: a57704
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %L,%p
+gui.column.hidden: %L,%d,%Cus:ngap.RAN_UE_NGAP_ID:0:R,%p,%Cus:ngap.AMF_UE_NGAP_ID:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -236,7 +236,7 @@ gui.column.format:
 
 # Font name for packet list, protocol tree, and hex dump panes. (Qt)
 # A string
-gui.qt.font_name: Source Code Pro,12,-1,5,50,0,0,0,0,0,Regular
+gui.qt.font_name: Liberation Mono,10,-1,5,50,0,0,0,0,0,Regular
 
 ####### User Interface: Layout ########
 
@@ -382,38 +382,6 @@ capture.devices_pmode: en0(1),p2p0(1),awdl0(1),llw0(1),utun0(1),utun1(1),utun2(1
 # TRUE or FALSE (case-insensitive)
 #extcap.gui_save_on_start: TRUE
 
-# Max bytes in a packet
-# A string
-#extcap.randpkt.maxbytes: 5000
-
-# Number of packets
-# A string
-#extcap.randpkt.count: 1000
-
-# Packet delay (ms)
-# A string
-#extcap.randpkt.delay: 0
-
-# Random type
-# A string
-#extcap.randpkt.randomtype: false
-
-# All random packets
-# A string
-#extcap.randpkt.allrandom: false
-
-# Type of packet
-# A string
-#extcap.randpkt.type: 
-
-# Run in debug mode
-# A string
-#extcap.randpkt.debug: false
-
-# Use a file for debug
-# A string
-#extcap.randpkt.debugfile: 
-
 # Remote SSH server address
 # A string
 #extcap.ciscodump.remotehost: 
@@ -424,7 +392,7 @@ capture.devices_pmode: en0(1),p2p0(1),awdl0(1),llw0(1),utun0(1),utun1(1),utun2(1
 
 # Remote SSH server username
 # A string
-#extcap.ciscodump.remoteusername: merlin
+#extcap.ciscodump.remoteusername: ninjab3s
 
 # Path to SSH private key
 # A string
@@ -440,7 +408,7 @@ capture.devices_pmode: en0(1),p2p0(1),awdl0(1),llw0(1),utun0(1),utun1(1),utun2(1
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 2a05:3e00:9:110a::1003 any eq 0, deny tcp any eq 0 host 2a05:3e00:9:110a::1003, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host 100.113.10.5 any eq 0, deny tcp any eq 0 host 100.113.10.5, deny tcp host fe80::2929:28f6:86d0:9d36 any eq 0, deny tcp any eq 0 host fe80::2929:28f6:86d0:9d36, deny tcp host fe80::fe93:e9df:cb8f:8133 any eq 0, deny tcp any eq 0 host fe80::fe93:e9df:cb8f:8133, deny tcp host fe80::25bb:b1e1:1af:8f05 any eq 0, deny tcp any eq 0 host fe80::25bb:b1e1:1af:8f05, deny tcp host fe80::39aa:aeea:27ec:8e90 any eq 0, deny tcp any eq 0 host fe80::39aa:aeea:27ec:8e90, deny tcp host fe80::ec02:6d90:b0b0:5ae3 any eq 0, deny tcp any eq 0 host fe80::ec02:6d90:b0b0:5ae3, deny tcp host fe80::bea0:22ed:5369:fecf any eq 0, deny tcp any eq 0 host fe80::bea0:22ed:5369:fecf, deny tcp host fe80::f83f:75ff:fef7:1c7e any eq 0, deny tcp any eq 0 host fe80::f83f:75ff:fef7:1c7e, deny tcp host fe80::f83f:75ff:fef7:1c7e any eq 0, deny tcp any eq 0 host fe80::f83f:75ff:fef7:1c7e, deny tcp host fd6a:8a79:c87f:0:b0a1:3934:61e2:e70d any eq 0, deny tcp any eq 0 host fd6a:8a79:c87f:0:b0a1:3934:61e2:e70d, deny tcp host fd6a:8a79:c87f:0:84b:80d2:773e:7ba5 any eq 0, deny tcp any eq 0 host fd6a:8a79:c87f:0:84b:80d2:773e:7ba5, deny tcp host 192.168.1.229 any eq 0, deny tcp any eq 0 host 192.168.1.229, deny tcp host fe80::180c:4b9a:c72:c336 any eq 0, deny tcp any eq 0 host fe80::180c:4b9a:c72:c336, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host fe80::8252:828a:a64c:ade9 any eq 0, deny tcp any eq 0 host fe80::8252:828a:a64c:ade9, deny tcp host 2001:230:cafe::1 any eq 0, deny tcp any eq 0 host 2001:230:cafe::1, deny tcp host fe80::4cce:abfa:c854:2fd9 any eq 0, deny tcp any eq 0 host fe80::4cce:abfa:c854:2fd9, deny tcp host fd6a:8a79:c87f:0:32b6:cf5c:f9b:5367 any eq 0, deny tcp any eq 0 host fd6a:8a79:c87f:0:32b6:cf5c:f9b:5367, deny tcp host fd6a:8a79:c87f:0:a04c:8b90:934f:e546 any eq 0, deny tcp any eq 0 host fd6a:8a79:c87f:0:a04c:8b90:934f:e546, deny tcp host fd6a:8a79:c87f::9f3 any eq 0, deny tcp any eq 0 host fd6a:8a79:c87f::9f3, deny tcp host 10.45.0.1 any eq 0, deny tcp any eq 0 host 10.45.0.1, deny tcp host 192.168.1.241 any eq 0, deny tcp any eq 0 host 192.168.1.241, permit ip any any
 
 # Packets to capture
 # A string
@@ -508,7 +476,7 @@ capture.devices_pmode: en0(1),p2p0(1),awdl0(1),llw0(1),utun0(1),utun1(1),utun2(1
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 2a05:3e00:9:110a::1003 or host fe80::aede:48ff:fe00:1122 or host 100.113.10.5 or host fe80::2929:28f6:86d0:9d36 or host fe80::fe93:e9df:cb8f:8133 or host fe80::25bb:b1e1:1af:8f05 or host fe80::39aa:aeea:27ec:8e90 or host fe80::ec02:6d90:b0b0:5ae3 or host fe80::bea0:22ed:5369:fecf or host fe80::f83f:75ff:fef7:1c7e or host fe80::f83f:75ff:fef7:1c7e or host fd6a:8a79:c87f:0:b0a1:3934:61e2:e70d or host fd6a:8a79:c87f:0:84b:80d2:773e:7ba5 or host 192.168.1.229 or host fe80::180c:4b9a:c72:c336 or host fe80::aede:48ff:fe00:1122 or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host fe80::8252:828a:a64c:ade9 or host 2001:230:cafe::1 or host fe80::4cce:abfa:c854:2fd9 or host fd6a:8a79:c87f:0:32b6:cf5c:f9b:5367 or host fd6a:8a79:c87f:0:a04c:8b90:934f:e546 or host fd6a:8a79:c87f::9f3 or host 10.45.0.1 or host 192.168.1.241) and port 22)
 
 # Packets to capture
 # A string
@@ -521,6 +489,182 @@ capture.devices_pmode: en0(1),p2p0(1),awdl0(1),llw0(1),utun0(1),utun1(1),utun2(1
 # Use a file for debug
 # A string
 #extcap.sshdump.debugfile: 
+
+# Max bytes in a packet
+# A string
+#extcap.randpkt.maxbytes: 5000
+
+# Number of packets
+# A string
+#extcap.randpkt.count: 1000
+
+# Packet delay (ms)
+# A string
+#extcap.randpkt.delay: 0
+
+# Random type
+# A string
+#extcap.randpkt.randomtype: false
+
+# All random packets
+# A string
+#extcap.randpkt.allrandom: false
+
+# Type of packet
+# A string
+#extcap.randpkt.type: 
+
+# Run in debug mode
+# A string
+#extcap.randpkt.debug: false
+
+# Use a file for debug
+# A string
+#extcap.randpkt.debugfile: 
+
+# Interface index
+# A string
+#extcap.dpauxmon.interface_id: 0
+
+# Run in debug mode
+# A string
+#extcap.dpauxmon.debug: false
+
+# Use a file for debug
+# A string
+#extcap.dpauxmon.debugfile: 
+
+# Starting position
+# A string
+#extcap.sdjournal.startfrom: 
+
+# Run in debug mode
+# A string
+#extcap.sdjournal.debug: false
+
+# Use a file for debug
+# A string
+#extcap.sdjournal.debugfile: 
+
+# ADB Server IP Address
+# A string
+#extcap.android_logcat_text_main_05d69705f0db4d73.adbserverip: 127.0.0.1
+
+# ADB Server TCP Port
+# A string
+#extcap.android_logcat_text_main_05d69705f0db4d73.adbservertcpport: 5037
+
+# Ignore log buffer
+# A string
+#extcap.android_logcat_text_main_05d69705f0db4d73.logcatignorelogbuffer: false
+
+# Custom logcat parameters
+# A string
+#extcap.android_logcat_text_main_05d69705f0db4d73.logcatcustomoptions: 
+
+# Run in debug mode
+# A string
+#extcap.android_logcat_text_main_05d69705f0db4d73.debug: false
+
+# Use a file for debug
+# A string
+#extcap.android_logcat_text_main_05d69705f0db4d73.debugfile: 
+
+# ADB Server IP Address
+# A string
+#extcap.android_logcat_text_system_05d69705f0db4d73.adbserverip: 127.0.0.1
+
+# ADB Server TCP Port
+# A string
+#extcap.android_logcat_text_system_05d69705f0db4d73.adbservertcpport: 5037
+
+# Ignore log buffer
+# A string
+#extcap.android_logcat_text_system_05d69705f0db4d73.logcatignorelogbuffer: false
+
+# Custom logcat parameters
+# A string
+#extcap.android_logcat_text_system_05d69705f0db4d73.logcatcustomoptions: 
+
+# Run in debug mode
+# A string
+#extcap.android_logcat_text_system_05d69705f0db4d73.debug: false
+
+# Use a file for debug
+# A string
+#extcap.android_logcat_text_system_05d69705f0db4d73.debugfile: 
+
+# ADB Server IP Address
+# A string
+#extcap.android_logcat_text_radio_05d69705f0db4d73.adbserverip: 127.0.0.1
+
+# ADB Server TCP Port
+# A string
+#extcap.android_logcat_text_radio_05d69705f0db4d73.adbservertcpport: 5037
+
+# Ignore log buffer
+# A string
+#extcap.android_logcat_text_radio_05d69705f0db4d73.logcatignorelogbuffer: false
+
+# Custom logcat parameters
+# A string
+#extcap.android_logcat_text_radio_05d69705f0db4d73.logcatcustomoptions: 
+
+# Run in debug mode
+# A string
+#extcap.android_logcat_text_radio_05d69705f0db4d73.debug: false
+
+# Use a file for debug
+# A string
+#extcap.android_logcat_text_radio_05d69705f0db4d73.debugfile: 
+
+# ADB Server IP Address
+# A string
+#extcap.android_logcat_text_events_05d69705f0db4d73.adbserverip: 127.0.0.1
+
+# ADB Server TCP Port
+# A string
+#extcap.android_logcat_text_events_05d69705f0db4d73.adbservertcpport: 5037
+
+# Ignore log buffer
+# A string
+#extcap.android_logcat_text_events_05d69705f0db4d73.logcatignorelogbuffer: false
+
+# Custom logcat parameters
+# A string
+#extcap.android_logcat_text_events_05d69705f0db4d73.logcatcustomoptions: 
+
+# Run in debug mode
+# A string
+#extcap.android_logcat_text_events_05d69705f0db4d73.debug: false
+
+# Use a file for debug
+# A string
+#extcap.android_logcat_text_events_05d69705f0db4d73.debugfile: 
+
+# ADB Server IP Address
+# A string
+#extcap.android_logcat_text_crash_05d69705f0db4d73.adbserverip: 127.0.0.1
+
+# ADB Server TCP Port
+# A string
+#extcap.android_logcat_text_crash_05d69705f0db4d73.adbservertcpport: 5037
+
+# Ignore log buffer
+# A string
+#extcap.android_logcat_text_crash_05d69705f0db4d73.logcatignorelogbuffer: false
+
+# Custom logcat parameters
+# A string
+#extcap.android_logcat_text_crash_05d69705f0db4d73.logcatcustomoptions: 
+
+# Run in debug mode
+# A string
+#extcap.android_logcat_text_crash_05d69705f0db4d73.debug: false
+
+# Use a file for debug
+# A string
+#extcap.android_logcat_text_crash_05d69705f0db4d73.debugfile: 
 
 ####### Name Resolution ########
 
